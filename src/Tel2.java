@@ -28,9 +28,6 @@ public class Tel2 {
         return mapa1.get(numTel);
     }
 
-
-
-
     public static void main(String[] args) {
 
         String numTel;
