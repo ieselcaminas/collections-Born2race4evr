@@ -8,11 +8,8 @@ public class parentesis {
         char ultimo;
         Stack<Character> pila = new Stack<>();
         for (int i = 0; i < cadena.length(); i++) {
-
             //Si son de apertura, lo pongo en la pila
-
             caracter = cadena.charAt(i);
-
             if (caracter == '(' || caracter == '{' || caracter == '[') {
                 pila.push(caracter);
             } else if (caracter == ')') {
@@ -23,22 +20,25 @@ public class parentesis {
                 if (ultimo != '(') {
                     return false;
                 }
-
-                //por hacer
-                else if (ultimo != '{'){
+            }else if ( caracter == ']') {
                     if (pila.isEmpty()) {
                         return false;
                     }
-                    return false;
-                }else if (ultimo != '[') {
+                    ultimo = pila.pop();
+                    if (ultimo != '[') {
+                        return false;
+                    }
+            }else if (caracter == '}') {
                     if (pila.isEmpty()) {
                         return false;
                     }
-                    return false;
-                }
+                    ultimo = pila.pop();
+                    if (ultimo != '{') {
+                        return false;
+                    }
             }
-        }
 
+        }
         return pila.isEmpty();
     }
 
