@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ej1 {
+public class Ej1_mio {
     public static void main(String[] args) {
         int[] nums = new int[]{2,4,1,7};
 
